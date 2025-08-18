@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путеводитель по разработке с LangGraph</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-text-primary font-sans">
+
+    <div id="root">
+        <header class="fixed top-0 left-0 right-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#hero" class="text-xl font-bold tracking-tighter text-accent hover:text-white transition-colors">LangGraph Guide</a>
+                <ul class="hidden md:flex items-center space-x-6">
+                    <li><a href="#section-1" class="nav-link">Введение</a></li>
+                    <li><a href="#section-2" class="nav-link">Reflection Agent</a></li>
+                    <li><a href="#section-3" class="nav-link">Reflexion Agent</a></li>
+                    <li><a href="#section-4" class="nav-link">Agentic RAG</a></li>
+                    <li><a href="#section-5" class="nav-link">ReAct Agent</a></li>
+                    <li><a href="#section-6" class="nav-link">Persistence</a></li>
+                    <li><a href="#section-7" class="nav-link">Async</a></li>
+                    <li><a href="#section-8" class="nav-link">Ecosystem</a></li>
+                    <li><a href="#section-9" class="nav-link">Production</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-6 pt-24 md:pt-32 pb-20">
+
+            <section id="hero" class="text-center pt-16 pb-24 scroll-animate">
+                <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">Путеводитель по разработке с <span class="text-accent">LangGraph</span></h1>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-text-secondary">
+                    Интерактивный учебный курс по созданию мощных AI-агентов и сложных языковых моделей.
+                </p>
+            </section>
+
+            <div class="space-y-8">
+                
+                <section id="section-1" class="course-section accordion-item scroll-animate section-with-bg" style="background-image: url('https://r2.flowith.net/files/o/1755506653700-neural_network_ai_cyberpunk_art_index_0@1024x1024.png');">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="section-content-1">
+                        <h2 class="section-title">Раздел 1: Введение</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-1" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="play-circle" class="topic-icon"></i>Что такое LangGraph и почему он важен для AI-агентов</li>
+                            <li class="topic-item"><i data-lucide="network" class="topic-icon"></i>Ключевые концепции: Графы, Flow Engineering и основные компоненты</li>
+                            <li class="topic-item"><i data-lucide="book-open" class="topic-icon"></i>Требования к курсу и вступление в сообщество</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-2" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-2">
+                        <h2 class="section-title">Раздел 2: Reflection Agent</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-2" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="settings-2" class="topic-icon"></i>Обзор и настройка проекта "Reflection Agent"</li>
+                            <li class="topic-item"><i data-lucide="git-merge" class="topic-icon"></i>Создание Reflector и Revisor Chains, определение графа</li>
+                            <li class="topic-item"><i data-lucide="search" class="topic-icon"></i>Отладка и трассировка с помощью LangSmith</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-3" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-3">
+                        <h2 class="section-title">Раздел 3: Reflexion Agent</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-3" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="user-check" class="topic-icon"></i>Проектирование агентов Actor и Revisor</li>
+                            <li class="topic-item"><i data-lucide="tool" class="topic-icon"></i>Реализация ToolNode для выполнения инструментов</li>
+                            <li class="topic-item"><i data-lucide="workflow" class="topic-icon"></i>Построение и запуск полного графа Reflexion Agent</li>
+                            <li class="topic-item"><i data-lucide="code" class="topic-icon"></i>[Опционально] Реализация Tool Executor до появления ToolNode</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="section-4" class="course-section accordion-item scroll-animate section-with-bg" style="background-image: url('https://r2.flowith.net/files/o/1755506700360-flow_engineering_directed_graph_visualization_index_1@1024x1024.png');">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-4">
+                        <h2 class="section-title">Раздел 4: Agentic RAG Flows</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-4" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="architecture" class="topic-icon"></i>Архитектура Agentic RAG и настройка проекта</li>
+                            <li class="topic-item"><i data-lucide="database" class="topic-icon"></i>Создание конвейера для данных (WebLoader, ChromaDB)</li>
+                            <li class="topic-item"><i data-lucide="filter" class="topic-icon"></i>Построение фильтра релевантности с Structured Output</li>
+                            <li class="topic-item"><i data-lucide="globe" class="topic-icon"></i>Реализация узлов: Retriever, Web Search (Tavily API), Generation</li>
+                            <li class="topic-item"><i data-lucide="lightbulb" class="topic-icon"></i>Продвинутые концепции: Self RAG и Adaptive RAG</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-5" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-5">
+                        <h2 class="section-title">Раздел 5: Implementing ReAct AgentExecutor</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-5" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="cpu" class="topic-icon"></i>Кодирование «мозга» агента: реализация ReAct Runnable</li>
+                            <li class="topic-item"><i data-lucide="cuboid" class="topic-icon"></i>Определение узлов агента в LangGraph</li>
+                            <li class="topic-item"><i data-lucide="link" class="topic-icon"></i>Соединение узлов в граф для ReAct-агента</li>
+                            <li class="topic-item"><i data-lucide="function-square" class="topic-icon"></i>Запуск агента с использованием Function Calling</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-6" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-6">
+                        <h2 class="section-title">Раздел 6: Persistence (Постоянство)</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-6" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="save" class="topic-icon"></i>Концепция Persistence в LangGraph</li>
+                            <li class="topic-item"><i data-lucide="memory-stick" class="topic-icon"></i>Реализация MemorySaver и SqliteSaver</li>
+                            <li class="topic-item"><i data-lucide="user-cog" class="topic-icon"></i>Создание Human In The Loop с помощью Interrupts</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section id="section-7" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-7">
+                        <h2 class="section-title">Раздел 7: Run graph asynchronously</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-7" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="zap" class="topic-icon"></i>Реализация асинхронного выполнения (Async Execution)</li>
+                            <li class="topic-item"><i data-lucide="git-fork" class="topic-icon"></i>Параллельный fan-out/fan-in узлов</li>
+                            <li class="topic-item"><i data-lucide="git-pull-request-arrow" class="topic-icon"></i>Условная ветвимость в асинхронном режиме</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-8" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-8">
+                        <h2 class="section-title">Раздел 8: LangGraph Ecosystem</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-8" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="layout-template" class="topic-icon"></i>Обзор LangGraph Studio (IDE)</li>
+                            <li class="topic-item"><i data-lucide="cloud" class="topic-icon"></i>Настройка и работа с LangGraph Cloud API</li>
+                            <li class="topic-item"><i data-lucide="box" class="topic-icon"></i>Глубокое погружение: Assistants, Threads, Runs</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-9" class="course-section accordion-item scroll-animate section-with-bg" style="background-image: url('https://r2.flowith.net/files/o/1755506680897-ai_thought_process_visualization_index_2@1024x1024.png');">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-9">
+                        <h2 class="section-title">Раздел 9: Production featuring GPT-Researcher</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-9" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="rocket" class="topic-icon"></i>Развертывание агентов в продакшене</li>
+                            <li class="topic-item"><i data-lucide="microscope" class="topic-icon"></i>Обзор архитектуры и демонстрация GPT Researcher</li>
+                            <li class="topic-item"><i data-lucide="users" class="topic-icon"></i>Сравнение LangGraph vs CrewAI и мульти-агентная архитектура</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-10" class="course-section accordion-item scroll-animate">
+                     <button class="accordion-header" aria-expanded="false" aria-controls="section-content-10">
+                        <h2 class="section-title">Раздел 10: Production Featuring CopilotKit</h2>
+                        <i data-lucide="chevron-down" class="accordion-chevron"></i>
+                    </button>
+                    <div id="section-content-10" role="region" class="accordion-content">
+                        <ul>
+                            <li class="topic-item"><i data-lucide="layout-dashboard" class="topic-icon"></i>Введение в Generative UI</li>
+                            <li class="topic-item"><i data-lucide="hand" class="topic-icon"></i>HIL (Human In the Loop) и Agent Human Interaction</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
