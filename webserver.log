@@ -1,7 +1,0 @@
-Server running on port 8000
-Serving directory: /home/user/webapp
-20/Aug/2025 15:37:22 - "GET / HTTP/1.1" 200 -
-20/Aug/2025 15:37:23 - "GET /style.css HTTP/1.1" 200 -
-20/Aug/2025 15:37:23 - "GET /script.js HTTP/1.1" 200 -
-20/Aug/2025 15:37:24 - code 404, message File not found
-20/Aug/2025 15:37:24 - "GET /favicon.ico HTTP/1.1" 404 -
